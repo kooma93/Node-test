@@ -16,7 +16,7 @@ app.use(parser.urlencoded({extended: true}));
 app.use(mrgan('dev'));
 
 // CORS MIDDLEWARE <3
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use('/test', express.static(path.resolve(__dirname, "../client/dist")));
 
