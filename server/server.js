@@ -13,7 +13,7 @@ const wordLib = ["<p>Some html</p><br/>", "<p>Random html</p><br/>", "<p>PolarPr
 app.use(parser.json())
 app.use(parser.urlencoded({extended: true}));
 
-app.use(mrgan('dev'));
+app.use(morgan('dev'));
 
 // CORS MIDDLEWARE <3
 app.use(cors());
