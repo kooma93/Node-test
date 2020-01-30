@@ -21,6 +21,10 @@ app.use(cors());
 
 app.use('/test', express.static(path.resolve(__dirname, "../client/dist")));
 
+let getRandomInt = function(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 app.get('/test/getTest', (req, res) => {
   let testStr = '';
   for (let i = 0; i < 20; i++) {
