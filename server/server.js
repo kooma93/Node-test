@@ -5,6 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan')
 const parser = require('body-parser');
 const port = process.env.PORT || 8080;
+const path = require('path')
 
 const controller = require('./controller.js');
 const wordLib = ["<p>Some html</p><br/>", "<p>Random html</p><br/>", "<p>PolarPro html</p><br/>", "<p>PolarPro rocks!</p><br/>"]
