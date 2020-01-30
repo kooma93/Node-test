@@ -21,15 +21,11 @@ app.use(cors(corsOptions));
 app.use('/test', express.static(path.resolve(__dirname, "../client/dist")));
 
 app.get('/test/getTest', (req, res) => {
-  if (err) {
-    res.status(404).send(err)
-  } else {
-    let testStr = '';
-    for (let i = 0; i < 20; i++) {
-      testStr += wordLib[getRandomInt(4)];
-    }
-    res.status(200).send(testStr)
+  let testStr = '';
+  for (let i = 0; i < 20; i++) {
+    testStr += wordLib[getRandomInt(4)];
   }
+  res.status(200).send(testStr)
 })
 
 app.listen(port, '0.0.0.0', () => {
