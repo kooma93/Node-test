@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Test server</title>
 </head>
 <body>
@@ -13,14 +14,17 @@
 </body>
 </html>
 <script type="text/javascript">
-async function getData() {
-  let data = await fetch("/test/getTest");
-
-  if (data.status === 200) {
-    console.log(data.data);
-    return data.json();
-  } else {
-    throw new Error(`Failed to get request, test server returned ${data.status} ${data.body}`);
-  }
+var getData = function() {
+  $.get('/test/getTest', function(data) {
+    $('#fetched').append(data);
+  })
+  .fail(err => console.log(err))
+  .always(() => console.log('done'))
 }
 </script>
+<style>
+p {
+  background-color: lightblue;
+  color: lightcoral;
+}
+</style>
