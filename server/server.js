@@ -8,7 +8,7 @@ const port = process.env.PORT || 8080;
 const path = require('path')
 
 const controller = require('./controller.js');
-const wordLib = ["<p>Some html</p><br/>", "<p>Random html</p><br/>", "<p>PolarPro html</p><br/>", "<p>PolarPro rocks!</p><br/>"]
+const wordLib = ["<p>Some html</p>", "<p>Random html</p>", "<p>PolarPro html</p>", "<p>PolarPro rocks!</p>"]
 
 // Parses incoming requests with JSON payloads
 app.use(parser.json())
